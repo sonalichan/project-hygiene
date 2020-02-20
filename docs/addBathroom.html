@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>Hygiene U-District</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+    <header>
+        <img src="imgs/noun_sink_1101346.png" alt="Sink icon">
+        <h1>U-District Hygiene</h1>
+        <p>A collection of restrooms available for the public</p>
+        <nav class="topnav">
+            <ul>
+                <li><a href="mainPage.html"><span class="logo" aria-hidden="true">&nbsp;</span>Home </a></li>
+                <li><a class="plain" href="addBathroom.html">Add a Bathroom</a></li>
+                <li><a class="plain" href="about.html">About</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <h2>Add a Bathroom</h2>
+        <form action="/">
+            <div class="title">
+                <h3>Register here</h3>
+            </div>
+            <div class="form"><input class="location" name="location" type="text"
+                    placeholder="Address of the bathroom" />
+                <input name="email" type="text" placeholder="email@email.com" />
+                <select>
+                    <option selected="selected" value="bathroom-type">Bathroom type*</option>
+                    <option value="without-baby-station">Bathroom WITHOUT baby station</option>
+                    <option value="with-baby-station">Bathroom WITH baby station</option>
+                </select>
+                <form>
+                    <p>Was the bathroom clean?</p>
+                    <input type="radio" name="yes" value="yes"> Yes<br>
+                    <input type="radio" name="no" value="no"> No<br>
+                </form>
+            </div>
+            <div class="checkbox"><input name="checkbox" type="checkbox" />I agree to the <a
+                    href="https://www.w3docs.com/privacy-policy">Privacy Policy for Hygiene U-District.</a></div>
+            <button type="submit">Submit</button>
+        </form>
+        <div class="getLocation">
+            <p>Click the button to get your coordinates to know exact location.</p>
+
+            <button onclick="getLocation()">Get Coordinates</button>
+
+            <p id="demo"></p>
+
+            <script>
+                var x = document.getElementById("demo");
+
+                function getLocation() {
+                    if (navigator.geolocation) {
+                        navigator.geolocation.getCurrentPosition(showPosition);
+                    } else {
+                        x.innerHTML = "Geolocation is not supported by this browser.";
+                    }
+                }
+
+                function showPosition(position) {
+                    x.innerHTML = "Latitude: " + position.coords.latitude +
+                        "<br>Longitude: " + position.coords.longitude;
+                }
+            </script>
+        </div>
+    </main>
+</body>
+
+</html>
